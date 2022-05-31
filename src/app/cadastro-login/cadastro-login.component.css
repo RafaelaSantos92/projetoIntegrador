@@ -1,17 +1,3 @@
-#conteudo-left{
-    width:720px; 
-    margin: 0 auto; 
-    text-align:left;
-    border:2px solid #000
-    
-
-
-}
-
-#conteudo-right{
-    width:720px; 
-    margin: 0 auto; 
-    text-align:right;
-    border:2px solid #000
-    
+.div{
+    display: inline-block;
 }
