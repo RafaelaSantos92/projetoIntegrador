@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { temas } from '../model/temas';
+import { TemaService } from '../service/tema.service';
 
 @Component({
   selector: 'app-temas',
@@ -8,11 +10,32 @@ import { Router } from '@angular/router';
 })
 export class TemasComponent implements OnInit {
 
+  temas: temas = new temas()
+  listaTemas: temas[]
+
   constructor(
-    private roouter: Router
+    private roouter: Router,
+    private temaService: TemaService
   ) { }
 
   ngOnInit(){
+    this.findAllTemas()
+  }
+
+  findAllTemas(){
+    this.temaService.getAllTema().subscribe((resp: temas[]) =>{
+      this.listaTemas = resp
+    })
+  }
+
+
+  cadastrar(){
+    this.temaService.postTema(this.temas).subscribe((resp: temas) => {
+      this.temas = resp
+      alert('Tema cadastrado com sucesso!')
+      this.findAllTemas()
+      this.temas = new temas()
+    })
   }
 
 }
