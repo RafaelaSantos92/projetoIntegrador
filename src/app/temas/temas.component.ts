@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-temas',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TemasComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private roouter: Router
+  ) { }
 
-  ngOnInit(): void {
+  ngOnInit(){
   }
 
 }

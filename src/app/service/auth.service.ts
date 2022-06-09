@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { EventHandlerVars } from '@angular/compiler/src/compiler_util/expression_converter';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment.prod';
 import { user } from '../model/user';
 import { userLogin } from '../model/userLogin';
 
@@ -25,8 +26,16 @@ export class AuthService {
 
    cadastrar(user: user): Observable<user> {
     return this.http.post<user>('https://informacaomudaomundo.herokuapp.com/Usuario/cadastrar', user)
+  }
 
+  logado(){
+    let ok = false
 
-}
+    if(environment.token != ''){
+      ok = true
+    }
+
+    return ok
+  }
 
 }
