@@ -19,6 +19,7 @@ export class TemasComponent implements OnInit {
   ) { }
 
   ngOnInit(){
+    this.temaService.refreshToken()
     this.findAllTemas()
   }
 
@@ -33,6 +34,7 @@ export class TemasComponent implements OnInit {
     this.temaService.postTema(this.temas).subscribe((resp: temas)=>{
       this.temas = resp
       alert('Tema cadastrado com sucesso!')
+      this.findAllTemas()
       this.temas = new temas()
     })
   }

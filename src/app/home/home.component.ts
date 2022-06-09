@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { noticias } from '../model/noticias';
 import { temas } from '../model/temas';
+import { AuthService } from '../service/auth.service';
 import { NoticiasService } from '../service/noticias.service';
 import { TemaService } from '../service/tema.service';
 
@@ -19,14 +20,18 @@ export class HomeComponent implements OnInit {
   constructor(
     private router: Router,
     private noticiasService: NoticiasService,
-    private temaService: TemaService
+    private temaService: TemaService,
+    private authService: AuthService
+
+
   ) { }
 
   ngOnInit(){
     this.getAllTemas()
    }
 
-   getAllTemas() {
+
+   getAllTemas(){
     this.temaService.getAllTema().subscribe((resp: temas[])=>{
       this.listaTemas = resp 
     })

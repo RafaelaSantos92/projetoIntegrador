@@ -10,11 +10,14 @@ import { userLogin } from '../model/userLogin';
   providedIn: 'root'
 })
 export class AuthService {
+  refreshToken: any;
 
   constructor(
     private http: HttpClient
 
-  ) { }
+  ) 
+  
+  { }
   
 
 
