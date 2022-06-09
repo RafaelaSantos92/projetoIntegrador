@@ -10,6 +10,7 @@ import { RodapeComponent } from './rodape/rodape.component';
 import { CadastroLoginComponent } from './cadastro-login/cadastro-login.component';
 import { TemasComponent } from './temas/temas.component';
 import { HomeComponent } from './home/home.component';
+import { NoticiasComponent } from './noticias/noticias.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { HomeComponent } from './home/home.component';
     RodapeComponent,
     CadastroLoginComponent,
     TemasComponent,
-    HomeComponent
+    HomeComponent,
+    NoticiasComponent
   ],
   imports: [
     BrowserModule,

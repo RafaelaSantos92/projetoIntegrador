@@ -63,6 +63,7 @@ userLogin: userLogin = new userLogin()
         environment.id = this.userLogin.id;
         environment.foto = this.userLogin.foto;
         environment.token = this.userLogin.token;
+        console.log(environment)
         this.router.navigate(['/home'])
         },
         error: erro=> {
