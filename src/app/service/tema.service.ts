@@ -26,9 +26,22 @@ export class TemaService {
     return this.http.get<temas[]>('https://informacaomudaomundo.herokuapp.com/Temas', this.token)
   }
 
+  getByIdTema(id: number): Observable<temas>{
+    return this.http.get<temas>(`https://informacaomudaomundo.herokuapp.com/Temas/${id}`, this.token)
+
+  }
+
   postTema(temas: temas): Observable<temas>{
     return this.http.post<temas>('https://informacaomudaomundo.herokuapp.com/Temas', temas, this.token)
 
+  }
+
+  putTema(temas: temas): Observable<temas>{
+    return this.http.put<temas>('https://informacaomudaomundo.herokuapp.com/Temas', temas, this.token)
+  }
+
+  deleteTema(id: number) {
+    return this.http.delete<temas>(`https://informacaomudaomundo.herokuapp.com/Temas/${id}`, this.token)
   }
 
 }
