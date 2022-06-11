@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other style files */
+
+.Margens{
+    margin-right: 70px;
+    border: 1px solid #110B11 ;
+    color: #447088;
+    border-radius: 25px;
+    padding: 5px;
+    width: 200px;
+    height: 50px;
+}
+
+#carousel{
+
+}
+
+.CategoriasMulheres{
+    color: palevioletred;
+}
+.CategoriasLGBT{
+    color: #CBD4C2;
+}
+.titulo{
+    color: #447088;
+    text-align: center;
+    text-decoration: underline;
+}
+
