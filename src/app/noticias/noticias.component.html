@@ -1,0 +1,46 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+
+
+
+<div class="form-grup">
+    <label for="titulo">Titulo</label>
+    <input [(ngModel)]="noticias.titulo" type="titulo" class="form-control" id="titulo" placeholder="Digite o titulo da postagem">
+  </div>
+<br>
+  <div class="form-grup">
+    <label for="texto">Texto</label>
+    <textarea [(ngModel)]="noticias.texto" class="form-control" name="texto" id="texto" rows="3"></textarea>
+  </div>
+<br>
+  <div class="form-grup">
+    <label for="tema">Escolha um tema ou <a routerLink="/temas">cadastre um novo!</a>:</label>
+    <select name="temas" id="temas" class="form-control" [(ngModel)]="idTemas" (change)="findByIdTemas()">
+        <option *ngFor='let item of listaTemas' value="{{item.id}}">
+          {{item.descricao}}
+        </option>
+    </select>
+  </div>
+
+  <div class="form-grup">
+    <label for="fonte">Fonte da noticia</label>
+    <input [(ngModel)]="noticias.fonte" type="fonte" class="form-control" id="fonte" placeholder="url da noticia">
+  </div>    
+
+  <div class="form-grup">
+    <label for="foto">Coloque foto</label>
+    <input [(ngModel)]="noticias.foto" type="foto" class="form-control" id="foto" placeholder="url aqui">
+  </div>
+
+</div>
+</div>
+
+<div class="row">
+<div class="col-md-12">
+    <button class="btn btn-success" (click)="publicar()"> publicar </button>
+    <button class="btn btn-danger" routerLink="/home"> cancelar </button>
+</div>
+</div>
+</div>

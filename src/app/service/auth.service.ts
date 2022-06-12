@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { EventHandlerVars } from '@angular/compiler/src/compiler_util/expression_converter';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -10,7 +10,7 @@ import { userLogin } from '../model/userLogin';
   providedIn: 'root'
 })
 export class AuthService {
-  refreshToken: any;
+  
 
   constructor(
     private http: HttpClient
@@ -19,7 +19,15 @@ export class AuthService {
   
   { }
   
-
+  token = {
+    headers: new HttpHeaders().set('Authorization', environment.token),
+  };
+  
+  refreshToken() {
+    this.token = {
+      headers: new HttpHeaders().set('Authorization', environment.token),
+    };
+  }
 
   entrar(userLogin: userLogin ): Observable <userLogin> {
     return this.http.post<userLogin>('https://informacaomudaomundo.herokuapp.com/Usuario/logar', userLogin)
