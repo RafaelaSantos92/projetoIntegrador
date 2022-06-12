@@ -54,52 +54,77 @@
 
  
 
-<div class="container justify-content-center"> 
-  <div class="card mb-3 mt-3" style="max-width: 540px;">
-    <div class="row no-gutters  ">
-      <div class="col-md-4">
-        <img src="https://imagens.brasil.elpais.com/resizer/9jSwChLqBEkWO6bQq-aXjkmODHw=/414x0/cloudfront-eu-central-1.images.arcpublishing.com/prisa/UWVVBHVAO433IO5JLFIPRR73QA.jpg" alt="Foto Bolsonaro" height="350px" width="500px">
+<!-- Menu com as Noticias -->
+
+
+<div class="container mb-5 mt-5" id="noticias">
+
+  <nav>
+      <div class="nav nav-tabs d-flex justify-content-center " id="nav-tab" role="tablist">
+        <a class="nav-link active text-info font-weight-bold" id="nav-todasnoticias-tab" data-toggle="tab" href="#todasnoticias" role="tab" aria-controls="todasnoticias" aria-selected="true">Todas as noticias</a>
+
+        <a (click)="findByIdUsuario()" class="nav-link text-info font-weight-bold" id="nav-minhasnoticias-tab" data-toggle="tab" href="#minhasnoticias" role="tab" aria-controls="minhasnoticias" aria-selected="false">Minhas noticias</a>
+
+        <a (click)="findByIdTema()" class="nav-link text-info font-weight-bold" id="nav-noticiasTema-tab" data-toggle="tab" href="#noticiasTema" role="tab" aria-controls="noticiasTema" aria-selected="false">noticias por tema</a>
+
       </div>
-      <div class="col-md-10">
-        <div class="card-body">
-          <h5 class="card-title">Bolsonaro não aceita mudar “Dia do Índio” para “Dia dos Povos Indígenas”</h5>
-          <p class="card-text">Evolução é uma palavra que o governo desconhece. Jair Bolsonaro, que quando pré-candidato disse que não demarcaria um centímetro de terras indígenas, em publicação no Diário Oficial da União desta quinta-feira (2) vetou o projeto de lei que muda o “Dia do Índio” para “Dia dos Povos Indígenas”.</p>
-          <p class="card-text"><small class="text-muted">Última atualização 5 minutos atrás</small></p>
+    </nav>
+    <div class="tab-content mt-5" id="nav-tabContent">
+
+      <!-- Todas as noticias -->
+      <div class="tab-pane fade show active" id="todasnoticias" role="tabpanel" aria-labelledby="nav-todasnoticias-tab">
+         
+        <div class="card mb-3" *ngFor="let item of listaNoticias">
+          <img src="{{item.foto}}" class="card-img-top" alt="foto da postagem">
+          <div class="card-body" >
+            <h5 class="card-title">{{item.titulo}}</h5>
+            <p class="card-text">{{item.texto}}</p>
+            <p class="card-text"><small class="text-muted">Publicado em: {{item.data | date: 'dd/MM/yyyy'}} as {{item.data | date: 'HH:mm'}}</small></p>
+            <p class="card-text"><small class="text-muted">Tema: {{item.temas.descricao}}</small></p>
+            <p class="card-text text-right"><small class="text-muted">By: {{item.usuario.nome}}</small></p>
+          </div>
+        </div>
+       
+      </div>
+       <!-- Todas as noticias -->
+
+      <!-- Todas as suas noticias -->
+      <div class="tab-pane fade" id="minhasnoticias" role="tabpanel" aria-labelledby="nav-minhasnoticias-tab">
+         
+        <div class="card mb-3" *ngFor="let item of user.noticias">
+          <img src="{{item.foto}}" class="card-img-top" alt="foto da noticia">
+          <div class="card-body" >
+            <h5 class="card-title">{{item.titulo}}</h5>
+            <p class="card-text">{{item.texto}}</p>
+            <p class="card-text"><small class="text-muted">Publicado em: {{item.data | date: 'dd/MM/yyyy'}} as {{item.data | date: 'HH:mm'}}</small></p>
+            <p class="card-text"><small class="text-muted">Tema: {{item.temas.descricao}}</small></p>
+
+            <a [routerLink]="['/postagem-edit', item.id]" class="text-info mr-3" href="">Editar</a>
+            <a [routerLink]="['/postagem-delete', item.id]" class="text-danger" href="">Apagar</a>
+          </div>
+        </div>
+
+      </div>
+      <!-- Todas as suas noticias -->
+
+      <!-- noticias por tema -->
+      <div class="tab-pane fade" id="noticiasTema" role="tabpanel" aria-labelledby="nav-noticiasTema-tab">
+
+        <div *ngFor="let temas of listaTemas">
+        <div class="card mb-3" *ngFor="let item of temas.noticias">
+          <img src="{{item.foto}}" class="card-img-top" alt="foto da noticia">
+          <div class="card-body" >
+            <h5 class="card-title">{{item.titulo}}</h5>
+            <p class="card-text">{{item.texto}}</p>
+            <p class="card-text"><small class="text-muted">Publicado em: {{item.data | date: 'dd/MM/yyyy'}} as {{item.data | date: 'HH:mm'}}</small></p>
+            <p class="card-text text-right"><small class="text-muted">By: {{item.usuario.nome}}</small></p>
+          </div>
         </div>
       </div>
+
+      </div>
+      <!-- noticias por tema -->
+
     </div>
-  </div>
-  <div class="card mb-3" style="max-width: 540px;">
-    <div class="row no-gutters">
-      <div class="col-md-4">
-        <img src="https://s2.glbimg.com/MI1w1KZowNVlHnumQE9QvEu5QhE=/0x0:1920x1080/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2019/R/N/3TyZEFQMuEPrcFDAmklA/protesto.png" alt="..." height="350px" width="500px">
-      </div>
-      <div class="col-md-10">
-        <div class="card-body">
-          <h5 class="card-title">Alunos relatam má qualidade da comida na USP, empresa é afastada. </h5>
-          <p class="card-text">Estudantes da Escola Superior de Agricultura Luiz de Queiroz (Esalq), campus da Universidade de São Paulo (USP) em Piracicaba, interior de São Paulo, ficaram sem oferta de alimentação por tempo indeterminado depois que a Vigilância Sanitária da cidade interditou o restaurante universitário do campus, por condições de higiene inadequadas, a gestão da cozinha é feita por uma empresa terceirizada desde 2016, a interdição aconteceu na última sexta-feira (27) pela manhã. As informações foram divulgadas em reportagem do Brasil de Fato.</p>
-          <p class="card-text"><small class="text-muted">Última atualização 32 minutos atrás</small></p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="card mb-3" style="max-width: 540px;">
-    <div class="row no-gutters">
-      <div class="col-md-4">
-        <img src="https://jornalsomos.com.br/admin/media/uploads/noticias/pexels-brett-sayles-1167034.jpg" alt="..." height="350px" width="500px">
-      </div>
-      <div class="col-md-10">
-        <div class="card-body">
-          <h5 class="card-title">Pesquisa do IBGE aponta que 2,9 milhões de adultos se declararam homossexuais ou bissexuais em 2019</h5>
-          <p class="card-text">Cerca de 2,9 milhões de pessoas se declararam homossexuais ou bissexuais, no país, em 2019, o que correspondia a 1,8% da população adulta, maior de 18 anos. Já 1,7 milhão não sabia sua orientação sexual e 3,6 milhões não quiseram responder. Os dados divulgados hoje (25) pelo IBGE, são da Pesquisa Nacional de Saúde (PNS) – Quesito Orientação Sexual, que investigou, pela primeira vez, e em caráter experimental, essa característica da população brasileira.</p>
-          <p class="card-text"><small class="text-muted">Última atualização 50 minutos atrás</small></p>
-        </div>
-      </div>
-    </div>
-  </div>
+
 </div>
-
-
-
-
-
