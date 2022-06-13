@@ -27,6 +27,7 @@ export class HomeComponent implements OnInit {
   ) { }
 
   ngOnInit(){
+    window.scroll(0,0)
     this.getAllTemas()
    }
 

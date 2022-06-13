@@ -13,6 +13,7 @@ import { HomeComponent } from './home/home.component';
 import { NoticiasComponent } from './noticias/noticias.component';
 import { TemaEditComponent } from './edit/tema-edit/tema-edit.component';
 import { TemaDeleteComponent } from './delete/tema-delete/tema-delete.component';
+import { UsuariosEditComponent } from './edit/usuarios-edit/usuarios-edit.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { TemaDeleteComponent } from './delete/tema-delete/tema-delete.component'
     HomeComponent,
     NoticiasComponent,
     TemaEditComponent,
-    TemaDeleteComponent
+    TemaDeleteComponent,
+    UsuariosEditComponent
   ],
   imports: [
     BrowserModule,
