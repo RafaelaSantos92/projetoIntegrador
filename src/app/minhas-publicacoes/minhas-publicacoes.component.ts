@@ -39,8 +39,8 @@ export class MinhasPublicacoesComponent implements OnInit {
   
   window.scroll(0,0)
   this.authService.refreshToken()
-  this.getAllTemas()
   this.getAllNoticias()
+  this.findByIdUsuario()
 
 }
 
