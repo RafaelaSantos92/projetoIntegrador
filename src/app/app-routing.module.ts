@@ -4,6 +4,8 @@ import { CadastroLoginComponent } from './cadastro-login/cadastro-login.componen
 import { TemaDeleteComponent } from './delete/tema-delete/tema-delete.component';
 import { TemaEditComponent } from './edit/tema-edit/tema-edit.component';
 import { UsuariosEditComponent } from './edit/usuarios-edit/usuarios-edit.component';
+import { NoticiasDeleteComponent } from './delete/noticias-delete/noticias-delete.component';
+import { NoticiasEditComponent } from './edit/noticias-edit/noticias-edit.component';
 import { HomeComponent } from './home/home.component';
 import { NoticiasComponent } from './noticias/noticias.component';
 import { TemasComponent } from './temas/temas.component';
@@ -16,6 +18,10 @@ const routes: Routes = [
 {path: 'entrar', component: CadastroLoginComponent},
 {path: 'temas', component: TemasComponent},
 {path: 'noticias', component: NoticiasComponent},
+
+
+{path: 'noticias-edit/:id', component: NoticiasEditComponent},
+{path: 'noticias-delete/:id', component: NoticiasDeleteComponent},
 
 {path: 'tema-edit/:id', component: TemaEditComponent},
 {path: 'tema-delete/:id', component: TemaDeleteComponent},

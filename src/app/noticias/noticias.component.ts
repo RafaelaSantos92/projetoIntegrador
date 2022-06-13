@@ -55,7 +55,7 @@ export class NoticiasComponent implements OnInit {
 
   findByIdTemas(){
     this.temaService.getByIdTema(this.idTemas).subscribe((resp: temas) => {
-      this.temas = resp
+   
     })
   }
 

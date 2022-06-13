@@ -11,9 +11,14 @@ import { CadastroLoginComponent } from './cadastro-login/cadastro-login.componen
 import { TemasComponent } from './temas/temas.component';
 import { HomeComponent } from './home/home.component';
 import { NoticiasComponent } from './noticias/noticias.component';
+
 import { TemaEditComponent } from './edit/tema-edit/tema-edit.component';
 import { TemaDeleteComponent } from './delete/tema-delete/tema-delete.component';
 import { UsuariosEditComponent } from './edit/usuarios-edit/usuarios-edit.component';
+
+import { NoticiasEditComponent } from './edit/noticias-edit/noticias-edit.component';
+import { NoticiasDeleteComponent } from './delete/noticias-delete/noticias-delete.component';
+
 
 
 @NgModule({
@@ -27,7 +32,10 @@ import { UsuariosEditComponent } from './edit/usuarios-edit/usuarios-edit.compon
     NoticiasComponent,
     TemaEditComponent,
     TemaDeleteComponent,
-    UsuariosEditComponent
+    UsuariosEditComponent,
+    NoticiasEditComponent,
+    NoticiasDeleteComponent
+
   ],
   imports: [
     BrowserModule,

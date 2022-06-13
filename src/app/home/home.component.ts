@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { noticias } from '../model/noticias';
 import { temas } from '../model/temas';
+import { user } from '../model/user';
 import { AuthService } from '../service/auth.service';
 import { NoticiasService } from '../service/noticias.service';
 import { TemaService } from '../service/tema.service';
@@ -14,10 +15,20 @@ import { TemaService } from '../service/tema.service';
 })
 export class HomeComponent implements OnInit {
 
+  
   noticias: noticias = new noticias()
+  listaNoticias: noticias[]
+
+  temas: temas =  new temas()
   listaTemas: temas[]
+  idTema: number
+
+  user: user = new user()
+  idUser = environment.id
 
   constructor(
+
+    private route: ActivatedRoute,
     private router: Router,
     private noticiasService: NoticiasService,
     private temaService: TemaService,
@@ -28,7 +39,10 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(){
     window.scroll(0,0)
+    this.authService.refreshToken()
     this.getAllTemas()
+    this.getAllNoticias()
+
    }
 
 
@@ -38,9 +52,24 @@ export class HomeComponent implements OnInit {
     })
    }
 
+   getAllNoticias(){
+    this.noticiasService.getAllNoticias().subscribe((resp: noticias[]) => {
+      this.listaNoticias = resp
+    })
+  }
 
-   publicar(){
+  findByIdUsuario(){
+    this.authService.getByIdUser(this.idUser).subscribe((resp: user) => {
+      this.user = resp
+    })
+  }
 
-   }
+  findByIdTema(){
+    this.temaService.getByIdTema(this.idTema).subscribe((resp: temas) => {
+      this.temas = resp
+    })
+  }
+
+
 
 }
