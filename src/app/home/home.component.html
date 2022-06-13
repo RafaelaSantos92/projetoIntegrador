@@ -52,7 +52,7 @@
 <!--/jumbotron-->
 
 
- 
+
 
 <!-- Menu com as Noticias -->
 
@@ -73,7 +73,7 @@
 
       <!-- Todas as noticias -->
       <div class="tab-pane fade show active" id="todasnoticias" role="tabpanel" aria-labelledby="nav-todasnoticias-tab">
-         
+
         <div class="card mb-3" *ngFor="let item of listaNoticias">
           <img src="{{item.foto}}" class="card-img-top" alt="foto da postagem">
           <div class="card-body" >
@@ -84,13 +84,13 @@
             <p class="card-text text-right"><small class="text-muted">By: {{item.usuario.nome}}</small></p>
           </div>
         </div>
-       
+
       </div>
        <!-- Todas as noticias -->
 
       <!-- Todas as suas noticias -->
       <div class="tab-pane fade" id="minhasnoticias" role="tabpanel" aria-labelledby="nav-minhasnoticias-tab">
-         
+
         <div class="card mb-3" *ngFor="let item of user.noticias">
           <img src="{{item.foto}}" class="card-img-top" alt="foto da noticia">
           <div class="card-body" >
@@ -99,8 +99,8 @@
             <p class="card-text"><small class="text-muted">Publicado em: {{item.data | date: 'dd/MM/yyyy'}} as {{item.data | date: 'HH:mm'}}</small></p>
             <p class="card-text"><small class="text-muted">Tema: {{item.temas.descricao}}</small></p>
 
-            <a [routerLink]="['/postagem-edit', item.id]" class="text-info mr-3" href="">Editar</a>
-            <a [routerLink]="['/postagem-delete', item.id]" class="text-danger" href="">Apagar</a>
+            <a [routerLink]="['/noticias-edit', item.id]" class="text-info mr-3" href="">Editar</a>
+            <a [routerLink]="['/noticias-delete', item.id]" class="text-danger" href="">Apagar</a>
           </div>
         </div>
 
@@ -111,6 +111,7 @@
       <div class="tab-pane fade" id="noticiasTema" role="tabpanel" aria-labelledby="nav-noticiasTema-tab">
 
         <div *ngFor="let temas of listaTemas">
+          <h2 class="mb-3 text-center">Tema: {{temas.descricao}}</h2>
         <div class="card mb-3" *ngFor="let item of temas.noticias">
           <img src="{{item.foto}}" class="card-img-top" alt="foto da noticia">
           <div class="card-body" >

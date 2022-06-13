@@ -1,0 +1,40 @@
+<div class="container mb-5 mt-5">
+   
+   
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="text-center">Apagar Noticia</h1>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-12">
+            <h4 class="text-center">Você tem certeza que quer apagar essa noticia?</h4>
+        </div>
+    </div>
+
+    <div class="card mb-3" >
+        <img src="{{noticias.foto}}" class="card-img-top" alt="foto da noticia">
+        <div class="card-body" >
+          <h5 class="card-title">{{noticias.titulo}}</h5>
+          <p class="card-text">{{noticias.texto}}</p>
+          <p class="card-text"><small class="text-muted">Publicado em: {{noticias.data | date: 'dd/MM/yyyy'}} as {{noticias.data | date: 'HH:mm'}}</small></p>
+          <p class="card-text"><small class="text-muted">Tema: {{noticias.temas.descricao}}</small></p>
+
+
+        </div>
+      </div>
+
+
+<div class="row mt-5">
+    <div class="col-md-12 d-flex justify-content-center">
+        <button class="btn btn-danger mr-4" routerLink="/home"> Cancelar</button>
+        <button class="btn btn-success" (click)="apagar()"> Apagar</button>
+    </div>
+</div>
+
+
+
+
+</div>

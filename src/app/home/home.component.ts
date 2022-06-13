@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { noticias } from '../model/noticias';
 import { temas } from '../model/temas';
@@ -27,6 +27,8 @@ export class HomeComponent implements OnInit {
   idUser = environment.id
 
   constructor(
+
+    private route: ActivatedRoute,
     private router: Router,
     private noticiasService: NoticiasService,
     private temaService: TemaService,
@@ -36,6 +38,8 @@ export class HomeComponent implements OnInit {
   ) { }
 
   ngOnInit(){
+
+    window.scroll(0,0)
 
     this.authService.refreshToken()
     this.getAllTemas()

@@ -11,6 +11,8 @@ import { CadastroLoginComponent } from './cadastro-login/cadastro-login.componen
 import { TemasComponent } from './temas/temas.component';
 import { HomeComponent } from './home/home.component';
 import { NoticiasComponent } from './noticias/noticias.component';
+import { NoticiasEditComponent } from './edit/noticias-edit/noticias-edit.component';
+import { NoticiasDeleteComponent } from './delete/noticias-delete/noticias-delete.component';
 
 
 @NgModule({
@@ -21,7 +23,9 @@ import { NoticiasComponent } from './noticias/noticias.component';
     CadastroLoginComponent,
     TemasComponent,
     HomeComponent,
-    NoticiasComponent
+    NoticiasComponent,
+    NoticiasEditComponent,
+    NoticiasDeleteComponent
   ],
   imports: [
     BrowserModule,
