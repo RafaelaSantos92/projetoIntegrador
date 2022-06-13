@@ -18,6 +18,7 @@ import { UsuariosEditComponent } from './edit/usuarios-edit/usuarios-edit.compon
 
 import { NoticiasEditComponent } from './edit/noticias-edit/noticias-edit.component';
 import { NoticiasDeleteComponent } from './delete/noticias-delete/noticias-delete.component';
+import { MinhasPublicacoesComponent } from './minhas-publicacoes/minhas-publicacoes.component';
 
 
 
@@ -34,7 +35,8 @@ import { NoticiasDeleteComponent } from './delete/noticias-delete/noticias-delet
     TemaDeleteComponent,
     UsuariosEditComponent,
     NoticiasEditComponent,
-    NoticiasDeleteComponent
+    NoticiasDeleteComponent,
+    MinhasPublicacoesComponent
 
   ],
   imports: [

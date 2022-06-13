@@ -9,6 +9,7 @@ import { NoticiasEditComponent } from './edit/noticias-edit/noticias-edit.compon
 import { HomeComponent } from './home/home.component';
 import { NoticiasComponent } from './noticias/noticias.component';
 import { TemasComponent } from './temas/temas.component';
+import { MinhasPublicacoesComponent } from './minhas-publicacoes/minhas-publicacoes.component';
 
 const routes: Routes = [
   
@@ -18,7 +19,7 @@ const routes: Routes = [
 {path: 'entrar', component: CadastroLoginComponent},
 {path: 'temas', component: TemasComponent},
 {path: 'noticias', component: NoticiasComponent},
-
+{path: 'minhasPublicacoes', component: MinhasPublicacoesComponent},
 
 {path: 'noticias-edit/:id', component: NoticiasEditComponent},
 {path: 'noticias-delete/:id', component: NoticiasDeleteComponent},

@@ -10,6 +10,10 @@ import { userLogin } from '../model/userLogin';
   providedIn: 'root'
 })
 export class AuthService {
+
+  nome: string
+  foto: string
+  id: number = environment.id
   
 
   constructor(private http: HttpClient) 
@@ -37,6 +41,10 @@ export class AuthService {
 
   getByIdUser(id: number): Observable<user>{
     return this.http.get<user>(`https://informacaomudaomundo.herokuapp.com/Usuario/${id}`, this.token)
+  }
+
+  atualizar(user: user){
+    return this.http.put<user>('https://informacaomudaomundo.herokuapp.com/Usuario/atualizar', user, this.token)
   }
 
   logado(){

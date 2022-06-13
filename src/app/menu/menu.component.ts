@@ -10,9 +10,9 @@ import { AuthService } from '../service/auth.service';
 })
 export class MenuComponent implements OnInit {
 
-  nome = environment.nome
-  foto = environment.foto
-  id = environment.id
+  nome = this.authService.nome
+  foto = this.authService.foto
+  id = this.authService.id
 
   constructor(
     public authService: AuthService,

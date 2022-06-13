@@ -28,14 +28,14 @@ export class UsuariosEditComponent implements OnInit {
     window.scroll(0,0)
     if(environment.token == '') {
 
-          this.router.navigate(['/home'])
+          // this.router.navigate(['/home'])
     }
     this.idUser = this.route.snapshot.params['id']
     this.findByIdUser(this.idUser)
   }
 
   confirmSenha(event:any) {
-    this.confirmSenha = event.target.value
+    this.confirmarSenha = event.target.value
 
   }
   tipoUser(event:any) {
@@ -50,7 +50,7 @@ export class UsuariosEditComponent implements OnInit {
       alert('As senhas estão incorretas.')
     }
     else {
-      this.authService.cadastrar(this.user).subscribe((resp: user) => {
+      this.authService.atualizar(this.user).subscribe((resp: user) => {
         this.user = resp
         this.router.navigate(['/entrar'])
         alert('Usuário atualizado com sucesso, faça login novamente!')
