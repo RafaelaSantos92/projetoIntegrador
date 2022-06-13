@@ -42,8 +42,10 @@ export class NoticiasComponent implements OnInit {
       this.router.navigate(['/entrar'])
     }
 
+
     this.auth.refreshToken()
     this.getAllTemas()
+    
     
   }
 
