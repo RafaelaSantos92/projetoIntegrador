@@ -3,9 +3,10 @@
 
 <!--jumbotron-->
 <div class="jumbotron jumbotron-fluid bg-white">
-  <div class="container ">
-    <h1 class="display-4 text-dark">Acompanhe por aqui</h1>
-    <p class="lead text-dark">As principais noticias do Brasil.</p>
+  <div class="container d-flex justify-content-center">
+    <h1 class="display-4 text-dark mr-5 mt-5">Acompanhe por aqui <p class="lead text-dark">As principais noticias do Brasil.</p></h1>
+    
+    <img src="https://i.imgur.com/EVFkUxG.jpg" />
   </div>
 </div>
 <!--/jumbotron-->
@@ -36,7 +37,7 @@
           <img src="{{item.foto}}" class="card-img-top" alt="foto da postagem">
           <div class="card-body" >
             <h5 class="card-title">{{item.titulo}}</h5>
-            <p class="card-text b">{{item.texto}} </p><a [routerLink]="['/ver-noticia', item.id]">Ler mais</a>
+            <p class="card-text ellipsis">{{item.texto}} </p><a [routerLink]="['/ver-noticia', item.id]">Ler mais</a>
             
             <p class="card-text"><small class="text-muted">Publicado em: {{item.data | date: 'dd/MM/yyyy'}} as {{item.data | date: 'HH:mm'}}</small></p>
             <p class="card-text"><small class="text-muted">Tema: {{item.temas.descricao}}</small></p>
