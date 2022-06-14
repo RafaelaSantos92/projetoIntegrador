@@ -64,7 +64,7 @@ userLogin: userLogin = new userLogin()
         environment.id = this.userLogin.id;
         environment.foto = this.userLogin.foto;
         environment.token = this.userLogin.token;
-        environment.tipo = this.userLogin.tipo
+        environment.tipo = this.userLogin.tipo;
 
         this.authservice.nome = this.userLogin.nome
         this.authservice.id = this.userLogin.id

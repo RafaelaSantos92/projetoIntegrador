@@ -5,3 +5,13 @@
 .fs-18{
     font-size: 18pt;
 }
+
+.preencher{
+    width: 100vw;
+}
+p.ellipsis {
+    white-space: nowrap; 
+    width: 300px; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}

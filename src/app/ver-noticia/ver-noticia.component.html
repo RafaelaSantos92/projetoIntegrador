@@ -1,0 +1,38 @@
+<div class="container">
+
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-12 ">
+
+            <img class="mb-5" src="{{noticias.foto}}" alt="foto da noticia">
+
+            <h1  class="text-center text-secondary">{{noticias.titulo}}</h1>
+
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <p>Publicado em: {{noticias.data | date: 'dd/MM/yyyy'}} as {{noticias.data | date: 'HH:mm'}}</p>
+        </div>
+    </div>
+
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-10 mb-5">
+
+            <h4 class="text-center text-dark mt-5">{{noticias.texto}}</h4>
+
+        </div>
+    </div>
+
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-10 mb-5">
+
+            <p>Autor: {{noticias.usuario.nome}}</p>
+            
+            <p>tema: {{noticias.temas.descricao}}</p>
+            
+
+        </div>
+    </div>
+</div>

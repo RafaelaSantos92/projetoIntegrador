@@ -11,6 +11,7 @@ import { NoticiasComponent } from './noticias/noticias.component';
 import { TemasComponent } from './temas/temas.component';
 import { MinhasPublicacoesComponent } from './minhas-publicacoes/minhas-publicacoes.component';
 import { SobreComponent } from './sobre/sobre.component';
+import { VerNoticiaComponent } from './ver-noticia/ver-noticia.component';
 
 const routes: Routes = [
   
@@ -22,6 +23,7 @@ const routes: Routes = [
 {path: 'noticias', component: NoticiasComponent},
 {path: 'minhasPublicacoes', component: MinhasPublicacoesComponent},
 {path: 'sobre', component: SobreComponent},
+{path: 'ver-noticia/:id', component: VerNoticiaComponent},
 
 {path: 'noticias-edit/:id', component: NoticiasEditComponent},
 {path: 'noticias-delete/:id', component: NoticiasDeleteComponent},

@@ -9,11 +9,11 @@ import { NoticiasService } from '../service/noticias.service';
 import { TemaService } from '../service/tema.service';
 
 @Component({
-  selector: 'app-minhas-publicacoes',
-  templateUrl: './minhas-publicacoes.component.html',
-  styleUrls: ['./minhas-publicacoes.component.css']
+  selector: 'app-ver-noticia',
+  templateUrl: './ver-noticia.component.html',
+  styleUrls: ['./ver-noticia.component.css']
 })
-export class MinhasPublicacoesComponent implements OnInit {
+export class VerNoticiaComponent implements OnInit {
 
   noticias: noticias = new noticias()
   listaNoticias: noticias[]
