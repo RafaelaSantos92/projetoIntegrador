@@ -3,28 +3,31 @@
       <span class="navbar-toggler-icon"></span>
     </button>
   
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" routerLink="/home">home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" routerLink="/temas">temas<span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" routerLink="/sobre">sobre<span class="sr-only">(current)</span></a>
-        </li>
-         <li class="nav-item active" *ngIf='!authService.logado()' >
-          <a class="nav-link" href="#" routerLink="/entrar">acessar Cadastro<span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item active" *ngIf='authService.logado()'>
-          <a class="nav-link" href="#" routerLink="/noticias">publicar<span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item active" *ngIf='authService.logado()'>
-          <a class="nav-link" href="#" routerLink="/minhasPublicacoes">Minhas Publicações<span class="sr-only">(current)</span></a>
-        </li>
-        </ul>
-            </div>
+    <div class="First">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" routerLink="/home">Home |<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" routerLink="/temas">Temas |<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" routerLink="/sobre">Sobre |<span class="sr-only">(current)</span></a>
+          </li>
+           <li class="nav-item active" *ngIf='!authService.logado()' >
+            <a class="nav-link" href="#" routerLink="/entrar">Acessar  | Cadastro<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active" *ngIf='authService.logado()'>
+            <a class="nav-link" href="#" routerLink="/noticias">Publicar<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active" *ngIf='authService.logado()'>
+            <a class="nav-link" href="#" routerLink="/minhasPublicacoes">Minhas Publicações<span class="sr-only">(current)</span></a>
+          </li>
+          </ul>
+              </div>
+    </div>
+   
           
 
             <div class="d-flex justify-content-center  align-items-center">

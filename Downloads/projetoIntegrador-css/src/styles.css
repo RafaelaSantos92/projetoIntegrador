@@ -5,12 +5,21 @@
     --background-color: #CBD4C2
 }
 
+.First{
+    font-family:'Times New Roman', Times, serif;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.conteiner{
+    background-color: ;
+}
+
 body{
-    background-color: var(--background-color) !important;
+    background-color: #2D5731 !important;
+    
 }
 
 nav, footer{
-    background-color: var(--primary-color);
+    background-color: #033B3D;
 }
 
 nav ul{
@@ -29,12 +38,15 @@ nav ul li a{
 }
 
 nav ul li a :hover{
-    text-decoration: underline;
+    text-decoration:underline;
+    
 }
 
 .cor-texto{
     color: var(--background-color)
 }
+
+
 
 
 
