@@ -1,1 +1,37 @@
-/* You can add global styles to this file, and also import other style files */
+:root{
+    --main-color: #D6D6FF; 
+    --accent-color: #110B11;
+    --primary-color: #447088;
+    --background-color: #CBD4C2
+}
+
+body{
+    background-color: var(--background-color);
+}
+
+nav{
+    background-color: var(--primary-color);
+}
+
+nav ul{
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    gap: 2rem;
+}
+
+nav ul li a{
+    text-decoration: none;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    color: var(--primary-color);
+    font-weight: 400;
+}
+
+nav ul li a :hover{
+    text-decoration: underline;
+}
+
+
+
+

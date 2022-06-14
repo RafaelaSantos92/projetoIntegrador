@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+<nav class="navbar navbar-expand-lg navbar-light var(--primary-color)">
      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -6,46 +6,47 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link btn btn-info mr-3" href="#">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="#">home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" routerLink="/temas">Temas<span class="sr-only">(current)</span></a>
+          <a class="nav-link" routerLink="/temas">temas<span class="sr-only">(current)</span></a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Sobre</a>
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/Sobre">sobre<span class="sr-only">(current)</span></a>
         </li>
          <li class="nav-item active" *ngIf='!authService.logado()' >
-          <a class="nav-link" href="#" routerLink="/entrar">Acessar Cadastro<span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="#" routerLink="/entrar">acessar Cadastro<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item active" *ngIf='authService.logado()'>
-          <a class="nav-link" href="#" routerLink="/noticias">Publicar<span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="#" routerLink="/noticias">publicar<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item active" *ngIf='authService.logado()'>
           <a class="nav-link" href="#" routerLink="/minhasPublicacoes">Minhas Publicações<span class="sr-only">(current)</span></a>
         </li>
-        
-        <ul class="navbar-nav mr-sm-2 d-fle align-items-center" *ngIf='authService.logado()'>
-          <li class="nav-item active"  >
-            <img src="{{authService.foto}}" onerror="this.src = 'https://github.com/tjfaccipieri.png'" alt="Imagem do User" width="50px" height="50px" class="img-fluid rounded-circle">
-          </li>
-          <li class="nav-item pl-3">
-            <p class="m-0 font-weight-bold text-white fs-16">Olá, {{authService.nome}}</p>
-          </li>
-         <li class="nav-item pl-3">
-              <a [routerLink]="['/usuarios-edit', authService.id]">
-                  <p class="font-weight-bold text-white fs-16 m-0"><i class="fa fa-pencil-square-o " aria-hidden="true"></i></p> 
-              </a>
-          </li>
         </ul>
-      </ul>
-
             </div>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-      </form>
-      <li class="nav-item pl-3 list-unstyled"  *ngIf='authService.logado()'>
-        <a (click)="sair()" class="m-0 font-weight-bolder text-white fs-16">Sair <i class="fa fa-sign-out" aria-hidden="true"></i></a>
-      </li>
+          
 
+            <div class="d-flex justify-content-center  align-items-center">
+              <ul class="navbar-nav mr-sm-2 d-fle align-items-center" *ngIf='authService.logado()'>
+                
+                
+               <li class="nav-item pl-3">
+                    <a [routerLink]="['/usuarios-edit', authService.id]">
+                        <p class="font-weight-bold text-white fs-16 m-0"><i class="fa fa-pencil-square-o " aria-hidden="true"></i></p> 
+                    </a>
+                </li>
+                <li class="nav-item active"  >
+                  <img  src="{{authService.foto}}" onerror="this.src = 'https://github.com/tjfaccipieri.png'" alt="Imagem do User" width="50px" height="50px" class="img-fluid rounded-circle">
+                </li>
+                <li class="nav-item pl-3 ml-1">
+                  <p class="m-0 font-weight-bold text-white fs-16">Olá, {{authService.nome}}</p>
+                </li>
+              </ul>
+              
+              <li class="nav-item pl-3 list-unstyled"  *ngIf='authService.logado()'>
+                <a (click)="sair()" class="m-0 font-weight-bolder text-white fs-16">Sair <i class="fa fa-sign-out" aria-hidden="true"></i></a>
+              </li>
+            </div>
 
+          </nav>

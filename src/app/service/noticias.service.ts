@@ -12,7 +12,7 @@ export class NoticiasService {
   constructor(private http: HttpClient) { }
 
   token = {
-    headers: new HttpHeaders().set('authorization', environment.token)
+    headers: new HttpHeaders().set('Authorization', environment.token)
 }
 
   getAllNoticias(): Observable<noticias[]>{

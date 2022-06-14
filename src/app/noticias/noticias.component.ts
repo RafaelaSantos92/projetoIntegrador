@@ -35,6 +35,7 @@ export class NoticiasComponent implements OnInit {
   ) { }
 
   ngOnInit(){
+    console.log(environment.token)
     window.scroll(0,0)
 
     if(environment.token == ''){

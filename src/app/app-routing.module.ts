@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { NoticiasComponent } from './noticias/noticias.component';
 import { TemasComponent } from './temas/temas.component';
 import { MinhasPublicacoesComponent } from './minhas-publicacoes/minhas-publicacoes.component';
+import { SobreComponent } from './sobre/sobre.component';
 
 const routes: Routes = [
   
@@ -20,6 +21,7 @@ const routes: Routes = [
 {path: 'temas', component: TemasComponent},
 {path: 'noticias', component: NoticiasComponent},
 {path: 'minhasPublicacoes', component: MinhasPublicacoesComponent},
+{path: 'sobre', component: SobreComponent},
 
 {path: 'noticias-edit/:id', component: NoticiasEditComponent},
 {path: 'noticias-delete/:id', component: NoticiasDeleteComponent},
