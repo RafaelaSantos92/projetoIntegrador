@@ -57,4 +57,14 @@ export class AuthService {
     return ok
   }
 
+  admin() {
+    let ok = false
+
+    if(environment.tipo == 'adm'){
+      ok = true
+    }
+
+    return ok
+  }
+
 }

@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid" *ngIf="auth.admin()">
 
   <div class="row bg-light">
     <div class="col-md-12 text-black-50">
@@ -57,7 +57,7 @@
         <tr *ngFor="let temas of listaTemas">
           <th>{{temas.id}}</th>
           <td>{{temas.descricao}}</td>
-          <td class="d-flex justify-content-end">
+          <td class="d-flex justify-content-end'">
             <button class="btn btn-info mr-3" [routerLink]="['/tema-edit', temas.id]">Editar</button>
             <button class="btn btn-danger" [routerLink]="['/tema-delete', temas.id]">Apagar</button>
           </td>

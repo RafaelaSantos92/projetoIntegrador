@@ -6,13 +6,13 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" routerLink="/home">home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item active">
           <a class="nav-link" routerLink="/temas">temas<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" routerLink="/Sobre">sobre<span class="sr-only">(current)</span></a>
+          <a class="nav-link" routerLink="/sobre">sobre<span class="sr-only">(current)</span></a>
         </li>
          <li class="nav-item active" *ngIf='!authService.logado()' >
           <a class="nav-link" href="#" routerLink="/entrar">acessar Cadastro<span class="sr-only">(current)</span></a>
@@ -28,7 +28,7 @@
           
 
             <div class="d-flex justify-content-center  align-items-center">
-              <ul class="navbar-nav mr-sm-2 d-fle align-items-center" *ngIf='authService.logado()'>
+              <ul class="navbar-nav mr-sm-2 d-flex align-items-center" *ngIf='authService.logado()'>
                 
                 
                <li class="nav-item pl-3">
@@ -39,8 +39,8 @@
                 <li class="nav-item active"  >
                   <img  src="{{authService.foto}}" onerror="this.src = 'https://github.com/tjfaccipieri.png'" alt="Imagem do User" width="50px" height="50px" class="img-fluid rounded-circle">
                 </li>
-                <li class="nav-item pl-3 ml-1">
-                  <p class="m-0 font-weight-bold text-white fs-16">Olá, {{authService.nome}}</p>
+                <li class="nav-item  ml-1">
+                  <p class="m-0 font-weight-bold  fs-16 cor-texto">Olá, {{authService.nome}}</p>
                 </li>
               </ul>
               

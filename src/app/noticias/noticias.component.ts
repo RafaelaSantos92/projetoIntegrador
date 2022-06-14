@@ -30,7 +30,7 @@ export class NoticiasComponent implements OnInit {
     private router: Router,
     private noticiasService: NoticiasService,
     private temaService : TemaService,
-    private auth: AuthService
+    public auth: AuthService
 
   ) { }
 

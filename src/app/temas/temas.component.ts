@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { temas } from '../model/temas';
+import { AuthService } from '../service/auth.service';
 import { TemaService } from '../service/tema.service';
 
 @Component({
@@ -15,7 +16,8 @@ export class TemasComponent implements OnInit {
 
   constructor(
     private roouter: Router,
-    private temaService: TemaService
+    private temaService: TemaService,
+    public auth: AuthService
   ) { }
 
   ngOnInit(){
