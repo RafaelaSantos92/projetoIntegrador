@@ -17,7 +17,7 @@
 <!-- Menu com as Noticias -->
 
 
-<div class="container mb-5 mt-5" id="noticias">
+<div id="noticias">
 
   <nav>
       <div class="nav nav-tabs d-flex justify-content-center " id="nav-tab" role="tablist">
@@ -57,7 +57,7 @@
           <img src="{{item.foto}}" class="card-img-top" alt="foto da noticia">
           <div class="card-body" >
             <h5 class="card-title">{{item.titulo}}</h5>
-            <p class="card-text">{{item.texto}}</p>
+            <p class="card-text ellipsis">{{item.texto}} </p><a [routerLink]="['/ver-noticia', item.id]">Ler mais</a>
             <p class="card-text"><small class="text-muted">Publicado em: {{item.data | date: 'dd/MM/yyyy'}} as {{item.data | date: 'HH:mm'}}</small></p>
             <p class="card-text text-right"><small class="text-muted">By: {{item.usuario.nome}}</small></p>
           </div>
