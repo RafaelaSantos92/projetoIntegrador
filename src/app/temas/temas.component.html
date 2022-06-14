@@ -1,11 +1,11 @@
 <div class="container-fluid" *ngIf="auth.admin()">
 
-  <div class="row bg-light">
+  <div class="row ">
     <div class="col-md-12 text-black-50">
 
 
-       <h1 class="fs-54 text-center">Temas</h1>
-      <h5 class="fs-18 text-center">Veja aqui todos os temas cadastrados ou cadastre um novo: </h5>
+       <h1 class="fs-54 text-center cor-texto2">Temas</h1>
+      <h5 class="fs-18 text-center cor-texto2">Veja aqui todos os temas cadastrados ou cadastre um novo: </h5>
 
       <div class="row d-flex justify-content-center mt-4 mb-5">
         <div class="col-md-3">
@@ -35,7 +35,7 @@
 
   <div class="row mt-5">
     <div class="col-md-12">
-      <h2 class="text-center">Todos os Temas</h2>
+      <h2 class="text-center cor-texto2">Todos os Temas</h2>
     </div>
   </div>
 
@@ -44,18 +44,16 @@
     <table class="table table-hover">
       <thead>
         <tr>
-          <th scope="col">#</th>
-          <th scope="col">Descrição</th>
-          <th scope="col" class="text-right">Modificações</th>
+        <th scope="col" class="text-right" *ngIf="auth.admin()" >Modificações</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let temas of listaTemas">
-          <th>{{temas.id}}</th>
-          <td>{{temas.descricao}}</td>
+          
+          <td class="d-flex justify-content-center">{{temas.descricao}}</td>
           <td class="d-flex justify-content-end">
-            <button class="btn btn-info mr-3" [routerLink]="['/tema-edit', temas.id]">Editar</button>
-            <button class="btn btn-danger" [routerLink]="['/tema-delete', temas.id]">Apagar</button>
+            <button *ngIf="auth.admin()" class="btn btn-info mr-3" [routerLink]="['/tema-edit', temas.id]">Editar</button>
+            <button *ngIf="auth.admin()" class="btn btn-danger" [routerLink]="['/tema-delete', temas.id]">Apagar</button>
           </td>
         </tr>
 

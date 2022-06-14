@@ -5,10 +5,10 @@
 
 
 <!--jumbotron-->
-<div class="jumbotron jumbotron-fluid bg-white mb-0">
+<div class="jumbotron jumbotron-fluid mb-0">
   <div class="container">
-    <h1 class="display-4 text-dark ">acompanhe por aqui</h1>
-    <h3>as principais noticias do Brasil</h3>
+    <h1 class="display-4 cor-texto3 ">acompanhe por aqui</h1>
+    <h3 class="cor-texto3">as principais noticias do Brasil</h3>
   </div>
 </div>
 <!--/jumbotron-->
@@ -55,7 +55,7 @@
 <div class="tab-pane fade ml-5 mr-5" id="noticiasTema" role="tabpanel" aria-labelledby="nav-noticiasTema-tab">
 
   <div *ngFor="let temas of listaTemas">
-    <h2 class="mb-3 text-center">Tema: {{temas.descricao}}</h2>
+    <h2 class="mb-3 text-center cor-texto2 ">{{temas.descricao}}</h2>
   <div class="card mb-3" *ngFor="let item of temas.noticias">
     <img src="{{item.foto}}" class="card-img-top" alt="foto da noticia">
     <div class="card-body" >
