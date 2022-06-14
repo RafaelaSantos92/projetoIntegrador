@@ -35,8 +35,8 @@ export class VerNoticiaComponent implements OnInit {
 
   ngOnInit(): void {
     window.scroll(0,0)
-    this.authService.refreshToken()
-    this.findByIdUsuario()
+    // this.authService.refreshToken()
+    // this.findByIdUsuario()
     let id = this.route.snapshot.params['id']
     this.findByIdNoticias(id)
   }
@@ -47,17 +47,17 @@ export class VerNoticiaComponent implements OnInit {
     })
   }
 
-  getAllTemas(){
-    this.temaService.getAllTema().subscribe((resp: temas[])=>{
-      this.listaTemas = resp 
-    })
-   }
+  // getAllTemas(){
+  //   this.temaService.getAllTema().subscribe((resp: temas[])=>{
+  //     this.listaTemas = resp 
+  //   })
+  //  }
   
-   getAllNoticias(){
-    this.noticiasService.getAllNoticias().subscribe((resp: noticias[]) => {
-      this.listaNoticias = resp
-    })
-  }
+  //  getAllNoticias(){
+  //   this.noticiasService.getAllNoticias().subscribe((resp: noticias[]) => {
+  //     this.listaNoticias = resp
+  //   })
+  // }
   
   findByIdUsuario(){
     this.authService.getByIdUser(this.idUser).subscribe((resp: user) => {
@@ -65,9 +65,9 @@ export class VerNoticiaComponent implements OnInit {
     })
   }
   
-  findByIdTema(){
-    this.temaService.getByIdTema(this.idTema).subscribe((resp: temas) => {
-      this.temas = resp
-    })
-  }
+  // findByIdTema(){
+  //   this.temaService.getByIdTema(this.idTema).subscribe((resp: temas) => {
+  //     this.temas = resp
+  //   })
+  // }
 }

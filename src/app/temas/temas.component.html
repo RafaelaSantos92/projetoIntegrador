@@ -46,7 +46,7 @@
         <tr>
           <th scope="col">#</th>
           <th scope="col">Descrição</th>
-          <th scope="col" class="text-right">Modificações</th>
+          <th scope="col" class="text-right" *ngIf="auth.admin()">Modificações</th>
         </tr>
       </thead>
       <tbody>

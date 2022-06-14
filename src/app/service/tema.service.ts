@@ -39,7 +39,7 @@ export class TemaService {
     return this.http.put<temas>('https://informacaomudaomundo.herokuapp.com/Temas', temas, this.token)
   }
 
-  deleteTema(id: number) {
+  deleteTema(id: number): Observable<temas> {
     return this.http.delete<temas>(`https://informacaomudaomundo.herokuapp.com/Temas/${id}`, this.token)
   }
 
