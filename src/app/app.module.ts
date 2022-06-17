@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { OrderModule } from 'ngx-order-pipe';
 
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
@@ -23,6 +24,7 @@ import { MinhasPublicacoesComponent } from './minhas-publicacoes/minhas-publicac
 import { SobreComponent } from './sobre/sobre.component';
 import { VerNoticiaComponent } from './ver-noticia/ver-noticia.component';
 import { AlertaComponent } from './alerta/alerta.component';
+
 
 
 
@@ -52,7 +54,8 @@ import { AlertaComponent } from './alerta/alerta.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    OrderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

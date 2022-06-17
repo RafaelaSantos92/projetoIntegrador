@@ -26,6 +26,9 @@ export class HomeComponent implements OnInit {
   user: user = new user()
   idUser = environment.id
 
+  key: 'data'
+  reverse: true
+
   constructor(
 
     private route: ActivatedRoute,

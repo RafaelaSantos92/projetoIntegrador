@@ -25,6 +25,9 @@ export class MinhasPublicacoesComponent implements OnInit {
   user: user = new user()
   idUser = environment.id
 
+  key: 'data'
+  reverse: true
+
   constructor(
     private route: ActivatedRoute,
     private router: Router,

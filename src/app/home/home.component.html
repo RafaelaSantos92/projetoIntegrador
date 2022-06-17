@@ -33,7 +33,7 @@
 <!-- Todas as noticias -->
 <div class="tab-pane fade show active ml-5 mr-5" id="todasnoticias" role="tabpanel" aria-labelledby="nav-todasnoticias-tab">
 
-  <div class="card mb-3" *ngFor="let item of listaNoticias">
+  <div class="card mb-3" *ngFor="let item of listaNoticias | orderBy : key : reverse">
     <img src="{{item.foto}}" class="card-img-top" alt="foto da postagem">
     <div class="card-body" >
       <h5 class="card-title">{{item.titulo}}</h5>
@@ -51,7 +51,7 @@
 <!-- noticias por tema -->
 <div class="tab-pane fade ml-5 mr-5" id="noticiasTema" role="tabpanel" aria-labelledby="nav-noticiasTema-tab">
 
-  <div *ngFor="let temas of listaTemas">
+  <div *ngFor="let temas of listaTemas | orderBy : key : reverse">
     <h2 class="mb-3 text-center cor-texto2 ">{{temas.descricao}}</h2>
   <div class="card mb-3" *ngFor="let item of temas.noticias">
     <img src="{{item.foto}}" class="card-img-top" alt="foto da noticia">
