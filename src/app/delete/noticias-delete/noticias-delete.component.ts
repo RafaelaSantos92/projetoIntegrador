@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { noticias } from 'src/app/model/noticias';
+import { AlertasService } from 'src/app/service/alertas.service';
 import { NoticiasService } from 'src/app/service/noticias.service';
 import { environment } from 'src/environments/environment.prod';
 
@@ -20,6 +21,7 @@ export class NoticiasDeleteComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private noticiasService: NoticiasService,
+    private alerta: AlertasService
 
   ) { }
 
@@ -51,7 +53,7 @@ export class NoticiasDeleteComponent implements OnInit {
 
   apagar(){
     this.noticiasService.deleteNoticias(this.idNoticia).subscribe(() => {
-      alert('Noticia apagada com sucesso!')
+      this.alerta.showAlertSuccess('Noticia apagada com sucesso!')
       this.router.navigate(['/home'])
     })
   }

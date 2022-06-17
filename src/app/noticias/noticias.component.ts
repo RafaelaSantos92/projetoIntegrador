@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment.prod';
 import { noticias } from '../model/noticias';
 import { temas } from '../model/temas';
 import { user } from '../model/user';
+import { AlertasService } from '../service/alertas.service';
 import { AuthService } from '../service/auth.service';
 import { NoticiasService } from '../service/noticias.service';
 import { TemaService } from '../service/tema.service';
@@ -30,7 +31,8 @@ export class NoticiasComponent implements OnInit {
     private router: Router,
     private noticiasService: NoticiasService,
     private temaService : TemaService,
-    public auth: AuthService
+    public auth: AuthService,
+    private alerta: AlertasService
 
   ) { }
 
@@ -71,7 +73,7 @@ export class NoticiasComponent implements OnInit {
 
     this.noticiasService.postNoticias(this.noticias).subscribe((resp: noticias) => {
       this.noticias = resp
-      alert('Noticia postada com sucesso!')
+      this.alerta.showAlertSuccess('Noticia postada com sucesso!')
       this.noticias = new noticias()
       this.router.navigate(['/home'])
 

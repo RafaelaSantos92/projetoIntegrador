@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { user } from '../model/user';
 import { userLogin } from '../model/userLogin';
+import { AlertasService } from '../service/alertas.service';
 import { AuthService } from '../service/auth.service';
 
 @Component({
@@ -20,7 +21,8 @@ userLogin: userLogin = new userLogin()
 
   constructor(
     private authservice: AuthService,
-    private router: Router
+    private router: Router,
+    private alerta: AlertasService
     
   ) { }
 
@@ -42,13 +44,13 @@ userLogin: userLogin = new userLogin()
     this.user.tipo = this.tipoUsuario
 
     if(this.user.senha != this.confirmarSenha){
-      alert('As senhas estão incorretas.')
+      this.alerta.showAlertDanger('As senhas estão incorretas.')
     }
     else {
       this.authservice.cadastrar(this.user).subscribe((resp: user) => {
         this.user = resp
         this.router.navigate(['/home'])
-        alert('Usuário cadastrado com sucesso, faça o login!')
+        this.alerta.showAlertSuccess('Usuário cadastrado com sucesso, faça o login!')
         this.user = new user()
         
 
@@ -75,7 +77,7 @@ userLogin: userLogin = new userLogin()
         },
         error: erro=> {
           if(erro.status == 401) {
-            alert('Usuário ou senha inválidos')
+            this.alerta.showAlertDanger('Usuário ou senha inválidos')
           }
         }
       })

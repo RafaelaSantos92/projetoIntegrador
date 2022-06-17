@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
@@ -21,6 +22,8 @@ import { NoticiasDeleteComponent } from './delete/noticias-delete/noticias-delet
 import { MinhasPublicacoesComponent } from './minhas-publicacoes/minhas-publicacoes.component';
 import { SobreComponent } from './sobre/sobre.component';
 import { VerNoticiaComponent } from './ver-noticia/ver-noticia.component';
+import { AlertaComponent } from './alerta/alerta.component';
+
 
 
 
@@ -40,14 +43,16 @@ import { VerNoticiaComponent } from './ver-noticia/ver-noticia.component';
     NoticiasDeleteComponent,
     MinhasPublicacoesComponent,
     SobreComponent,
-    VerNoticiaComponent
+    VerNoticiaComponent,
+    AlertaComponent
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ModalModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
