@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Route, Router } from '@angular/router';
+import { noticias } from 'src/app/model/noticias';
 import { temas } from 'src/app/model/temas';
 import { TemaService } from 'src/app/service/tema.service';
 
@@ -31,10 +32,12 @@ export class TemaEditComponent implements OnInit {
 }
 
 atualizar(){
+  this.temas.noticias = []
   this.temaService.putTema(this.temas).subscribe((resp: temas) => {
     this.temas = resp
     alert('Tema atualizado com sucesso!')
     this.router.navigate(['/temas'])
+
   })
 
 }

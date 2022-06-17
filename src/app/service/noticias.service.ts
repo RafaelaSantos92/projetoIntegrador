@@ -14,6 +14,11 @@ export class NoticiasService {
   token = {
     headers: new HttpHeaders().set('Authorization', environment.token)
 }
+refreshToken(){
+  this.token = {
+    headers: new HttpHeaders().set('Authorization', environment.token)
+  }
+}
 
   getAllNoticias(): Observable<noticias[]>{
     return this.http.get<noticias[]>('https://informacaomudaomundo.herokuapp.com/Noticias', this.token)

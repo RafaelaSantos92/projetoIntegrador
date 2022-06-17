@@ -44,6 +44,7 @@ export class NoticiasComponent implements OnInit {
     }
 
     this.auth.refreshToken()
+    this.noticiasService.refreshToken()
     this.getAllTemas()
     
   }

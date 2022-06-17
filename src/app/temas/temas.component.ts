@@ -23,7 +23,7 @@ export class TemasComponent implements OnInit {
   ngOnInit(){
     this.temaService.refreshToken()
     this.findAllTemas()
-  }
+      }
 
   findAllTemas(){
     this.temaService.getAllTema().subscribe((resp: temas[]) => {
