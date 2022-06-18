@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { temas } from '../model/temas';
+import { AlertasService } from '../service/alertas.service';
 import { AuthService } from '../service/auth.service';
 import { TemaService } from '../service/tema.service';
 
@@ -17,7 +18,8 @@ export class TemasComponent implements OnInit {
   constructor(
     private roouter: Router,
     private temaService: TemaService,
-    public auth: AuthService
+    public auth: AuthService,
+    private alerta: AlertasService
   ) { }
 
   ngOnInit(){
@@ -35,7 +37,7 @@ export class TemasComponent implements OnInit {
   cadastrar(){
     this.temaService.postTema(this.temas).subscribe((resp: temas)=>{
       this.temas = resp
-      alert('Tema cadastrado com sucesso!')
+      this.alerta.showAlertSuccess('Tema cadastrado com sucesso!')
       this.findAllTemas()
       this.temas = new temas()
     })

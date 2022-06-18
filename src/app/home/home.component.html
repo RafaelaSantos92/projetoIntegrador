@@ -24,7 +24,7 @@
   <nav>
       <div class="nav nav-tabs d-flex justify-content-center preencher" id="nav-tab" role="tablist">
         <a class="nav-link active font-weight-bold cor-texto" id="nav-todasnoticias-tab" data-toggle="tab" href="#todasnoticias" role="tab" aria-controls="todasnoticias" aria-selected="true">Todas as notícias</a>
-        <a (click)="findByIdTema()" class="nav-link font-weight-bold cor-texto" id="nav-noticiasTema-tab" data-toggle="tab" href="#noticiasTema" role="tab" aria-controls="noticiasTema" aria-selected="false">notícias por tema</a>
+        <a (click)="findByIdTema()" class="nav-link font-weight-bold cor-texto" id="nav-noticiasTema-tab" data-toggle="tab" href="#noticiasTema" role="tab" aria-controls="noticiasTema" aria-selected="false">Notícias por tema</a>
       </div>
     </nav>
     <div class="tab-content mt-5" id="nav-tabContent">
@@ -50,6 +50,15 @@
 
 <!-- noticias por tema -->
 <div class="tab-pane fade ml-5 mr-5" id="noticiasTema" role="tabpanel" aria-labelledby="nav-noticiasTema-tab">
+
+<div class="row d-flex justify-content-center mt-5 mb-5">
+  <div class="col-md-4">
+    <div class="form-group">
+      <input type="text" class="form-control" id="titulo" placeholder="Digite um tema para pesquisar" [(ngModel)]="nomeTema" (keyup)="findByNomeTema()">
+
+    </div>
+  </div>
+</div>
 
   <div *ngFor="let temas of listaTemas | orderBy : key : reverse">
     <h2 class="mb-3 text-center cor-texto2 ">{{temas.descricao}}</h2>

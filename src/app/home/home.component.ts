@@ -22,6 +22,7 @@ export class HomeComponent implements OnInit {
   temas: temas =  new temas()
   listaTemas: temas[]
   idTema: number
+  nomeTema: string
 
   user: user = new user()
   idUser = environment.id
@@ -72,6 +73,18 @@ export class HomeComponent implements OnInit {
       this.temas = resp
     })
   }
+
+  findByNomeTema(){
+    if(this.nomeTema == ''){
+      this.getAllTemas()
+    } else {
+      this.temaService.getByNomeTema(this.nomeTema).subscribe((resp: temas[])=>{
+        this.listaTemas = resp
+      })
+    }
+    
+  }
+  
 
 
 
