@@ -1,38 +1,57 @@
-<div class="container">
+<div class="container cor-fundo-titulo pl-0 pr-0" >
 
-    <div class="row d-flex justify-content-center">
-        <div class="col-md-12 ">
+    <div class="row d-flex justify-content-center mb-3">
+        <div class="col-md-12 d-flex justify-content-center ">
 
-            <img class="mb-5" src="{{noticias.foto}}" alt="foto da noticia">
-
-            <h1  class="text-center text-secondary">{{noticias.titulo}}</h1>
-
+            <h1  class="text-center text-light">{{noticias.titulo}}</h1>
 
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-md-12">
-            <p>Publicado em: {{noticias.data | date: 'dd/MM/yyyy'}} as {{noticias.data | date: 'HH:mm'}}</p>
-        </div>
-    </div>
+    <div class="row d-flex justify-content-center ">
+        <div class="col-md-12 d-flex justify-content-center ">
 
-    <div class="row d-flex justify-content-center">
-        <div class="col-md-10 mb-5">
-
-            <h4 class="text-center text-dark mt-5">{{noticias.texto}}</h4>
+            <img class="mb-5 foto foto" src="{{noticias.foto}}" alt="foto da noticia">
 
         </div>
     </div>
 
-    <div class="row d-flex justify-content-center">
-        <div class="col-md-10 mb-5">
+
+<div class="col-md-12 justify-content-center  ponta-redonda cor-fundo ml-4 mb-3">
+
+
+
+        <div class="col-md-12 mb-4 d-flex justify-content-center">
+            <div class="container ">
+                <div class="col-md-12 d-flex justify-content-center">
+
+                    <h4 class="text-center text-dark mt-0">{{noticias.texto}}</h4>
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+    <div class="row d-flex justify-content-center ">
+        <div class="col-md-10">
 
             <p>Autor: {{noticias.usuario?.nome}}</p>
             
-            <p>tema: {{noticias.temas?.descricao}}</p>
+            <p>Tema: {{noticias.temas?.descricao}}</p>
             
 
         </div>
     </div>
+
+</div>
+
+    <div class="row ">
+        <div class="col-md-12 d-flex justify-content-center mb-5">
+            <p>Publicado em: {{noticias.data | date: 'dd/MM/yyyy'}} às {{noticias.data | date: 'HH:mm'}}</p>
+        </div>
+    </div>
+
+
 </div>
