@@ -1,1 +1,72 @@
-/* You can add global styles to this file, and also import other style files */
+:root{
+    --main-color: #D6D6FF; 
+    --accent-color: #110B11;
+    --primary-color: #447088;
+    --background-color: #CBD4C2;
+    --contraste-color: #FFFCFF
+}
+
+.jumbotron{
+    background-color: var(--accent-color);
+}
+
+
+.First{
+    background-color: var(--main-color);
+    font-family:'Times New Roman', Times, serif;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+body{
+    background-color: var(--background-color) !important;
+}
+
+nav{
+    background-color: var(--primary-color);
+}
+
+footer{
+    background-color: var(--background-color);
+}
+
+nav ul{
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.750rem;
+}
+
+nav ul li a{
+    text-decoration: none;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    color: var(--primary-color);
+    font-weight: 400;
+}
+
+nav ul li a :hover{
+    text-decoration: underline;
+}
+
+.cor-texto{
+    font-family:'Times New Roman', Times, serif;
+    color: var(--background-color)
+}
+
+.cor-texto2{
+    font-family:'Times New Roman', Times, serif;
+    color: var(--primary-color)
+}
+
+.cor-texto3{
+    font-family:'Times New Roman', Times, serif;
+    color: var(--accent-color)
+}
+
+.confirm-button{
+    color: var(--primary-color)
+}
+
+.cardstyle{
+    background-color: var(--background-color);
+}

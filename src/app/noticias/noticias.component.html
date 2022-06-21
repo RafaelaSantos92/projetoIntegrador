@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="row d-flex justify-content-center">
+      <div class="col-md-12">
+
+<h1 class="mt-5 text-center">Publique sua noticia</h1>
+
+<div class="form-grup mt-4">
+  <label for="titulo">Titulo</label>
+  <input [(ngModel)]="noticias.titulo" type="titulo" class="form-control" id="titulo" placeholder="Digite o titulo da postagem">
+</div>
+<br>
+<div class="form-grup">
+  <label for="texto">Texto</label>
+  <textarea [(ngModel)]="noticias.texto" class="form-control resiza-none" name="texto" id="texto" rows="8" aria-setsize="none"></textarea>
+</div>
+<br>
+<div class="form-grup">
+  <label for="tema">Escolha um tema <span *ngIf="auth.admin()">ou <a routerLink="/temas">cadastre um novo!</a></span></label>
+  <select name="temas" id="temas" class="form-control" [(ngModel)]="idTemas" (change)="findByIdTemas()">
+      <option *ngFor='let item of listaTemas' value="{{item.id}}">
+        {{item.descricao}}
+      </option>
+  </select>
+</div>
+
+<div class="form-grup mb-3">
+  <label for="fonte">Fonte da noticia</label>
+  <input [(ngModel)]="noticias.fonte" type="fonte" class="form-control" id="fonte" placeholder="url da noticia">
+</div>    
+
+<div class="form-grup mb-4">
+  <label for="foto">Coloque foto</label>
+  <input [(ngModel)]="noticias.foto" type="foto" class="form-control" id="foto" placeholder="url aqui">
+</div>
+
+
+
+</div>
+</div>
+  </div>
+
+<div class="container d-flex justify-content-center">
+ <div class="row">
+    <div class="col-md-12">
+      <button class="btn btn-success mr-4 mb-4" (click)="publicar()"> publicar </button>
+      <button class="btn btn-danger  mb-4" routerLink="/home"> cancelar </button>
+
+    </div>
+  </div>
+</div>

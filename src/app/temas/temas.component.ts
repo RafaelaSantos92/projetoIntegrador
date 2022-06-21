@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { temas } from '../model/temas';
+import { AlertasService } from '../service/alertas.service';
+import { AuthService } from '../service/auth.service';
+import { TemaService } from '../service/tema.service';
 
 @Component({
   selector: 'app-temas',
@@ -7,9 +12,35 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TemasComponent implements OnInit {
 
-  constructor() { }
+  temas: temas = new temas()
+  listaTemas: temas[]
 
-  ngOnInit(): void {
+  constructor(
+    private roouter: Router,
+    private temaService: TemaService,
+    public auth: AuthService,
+    private alerta: AlertasService
+  ) { }
+
+  ngOnInit(){
+    this.temaService.refreshToken()
+    this.findAllTemas()
+      }
+
+  findAllTemas(){
+    this.temaService.getAllTema().subscribe((resp: temas[]) => {
+      this.listaTemas = resp
+    })
+  }
+
+
+  cadastrar(){
+    this.temaService.postTema(this.temas).subscribe((resp: temas)=>{
+      this.temas = resp
+      this.alerta.showAlertSuccess('Tema cadastrado com sucesso!')
+      this.findAllTemas()
+      this.temas = new temas()
+    })
   }
 
 }
